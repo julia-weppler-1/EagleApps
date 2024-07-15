@@ -1,0 +1,182 @@
+{% include 'user/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Department View</title>
+    <style></style>
+    <link rel="stylesheet" href="../../static/css/plan/style.css" />
+  </head>
+  <body>
+    <div class="left-sidebar-grid">
+      <div class="left-sidebar-grid">
+        <section class="left-sidebar">
+          <h3>Select Plan</h3>
+          <form method="post" action="{% url 'plan' %}">
+            {% csrf_token %}
+            <select name="plan-select">
+              {% for plan in user_plans %}
+              <option value="{{ plan.id }}">{{ plan.name }}</option>
+              {% endfor %}
+            </select>
+            <input type="submit" value="Select" />
+            <input type="hidden" name="action" value="edit" />
+          </form>
+
+          <form method="post" action="{% url 'plan' %}">
+            {% csrf_token %}
+            <input
+              type="text"
+              name="new_plan_name"
+              placeholder="Enter new plan name"
+              required
+              style="width: 200px;"
+            />
+            <br />
+            <!-- Optional line break for spacing -->
+            <button 
+                type="submit" 
+                name="create_plan"
+                style="font-size: 12px; padding: 5px 10px; color: black;">Create New Plan</button>
+          </form>
+
+          <!-- Clear Plan Button -->
+          <form method="post" action="{% url 'plan' %}">
+            {% csrf_token %}
+            <button
+              type="submit"
+              name="clear_plan"
+              style="background-color: rgb(222, 71, 71); font-size: 12px; padding: 5px 10px;"
+            >
+              Clear Current Plan
+            </button>
+          </form>
+
+          <button name="add_course">
+            <a href="{% url 'course_search' %}">Add Course</a>
+          </button>
+
+          <h3>Current Plan: {{ cur_plan.name }}</h3>
+          <h3>Your Progress:</h3>
+          <li style="font-size: 13px;">Major Requirements:  {{ major_progress }}%</li>
+          <h3>Recommended Courses:</h3>
+          <ul>
+              {% for requirement in major_needs %}
+              <li style="font-size: 13px;">{{ requirement }}</li>
+              {% endfor %}
+          </ul>
+          </div>
+        </section>
+        <main class="main-content">
+          <section id="plan-view">
+            <table class="plan-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Fall</th>
+                  <th>Spring</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Freshman</td>
+                  <td class="course-cell">
+                    <div class="course-wrapper">
+                      {% for course_code in courses.freshman_fall %}
+                        <div class="add-courses-card">
+                          <a href="{% url 'remove_course' %}?semester=freshman_fall&course={{ course_code }}">{{ course_code|slice:":8" }}</a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </td>
+                  <td class="course-cell">
+                    <div class="course-wrapper">
+                      {% for course_code in courses.freshman_spring %}
+                        <div class="add-courses-card">
+                          <a href="{% url 'remove_course' %}?semester=freshman_spring&course={{ course_code }}">{{ course_code|slice:":8" }}</a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sophomore</td>
+                  <td class="course-cell">
+                    <div class="course-wrapper">
+                      {% for course_code in courses.sophomore_fall %}
+                        <div class="add-courses-card">
+                          <a href="{% url 'remove_course' %}?semester=sophomore_fall&course={{ course_code }}">{{ course_code|slice:":8" }}</a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </td>
+                  <td class="course-cell">
+                    <div class="course-wrapper">
+                      <!-- <div class="add-courses-card">
+                        <div class="status-menu">
+                          <ul>
+                            <li>Planned</li>
+                            <li>In Progress</li>
+                            <li>Completed</li>
+                          </ul>
+                        </div>
+                      </div> -->
+                      {% for course_code in courses.sophomore_spring %}
+                        <div class="add-courses-card">
+                          <a href="{% url 'remove_course' %}?semester=sophomore_spring&course={{ course_code }}">{{ course_code|slice:":8" }}</a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Junior</td>
+                  <td class="course-cell">
+                    <div class="course-wrapper">
+                    {% for course_code in courses.junior_fall %}
+                      <div class="add-courses-card">
+                        <a href="{% url 'remove_course' %}?semester=junior_fall&course={{ course_code }}">{{ course_code|slice:":8" }}</a>
+                      </div>
+                    {% endfor %}
+                    </div>
+                  </td>
+                  <td class="course-cell">
+                    <div class="course-wrapper">
+                      {% for course_code in courses.junior_spring %}
+                        <div class="add-courses-card">
+                          <a href="{% url 'remove_course' %}?semester=junior_spring&course={{ course_code }}">{{ course_code|slice:":8" }}</a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Senior</td>
+                  <td class="course-cell">
+                    <div class="course-wrapper">
+                    {% for course_code in courses.senior_fall %}
+                      <div class="add-courses-card">
+                        <a href="{% url 'remove_course' %}?semester=senior_fall&course={{ course_code }}">{{ course_code|slice:":8" }}</a>
+                      </div>
+                    {% endfor %}
+                    </div>
+                  </td>
+                  <td class="course-cell">
+                    <div class="course-wrapper">
+                    {% for course_code in courses.senior_spring %}
+                      <div class="add-courses-card">
+                        <a href="{% url 'remove_course' %}?semester=senior_spring&course={{ course_code }}">{{ course_code|slice:":8" }}</a>
+                      </div>
+                    {% endfor %}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

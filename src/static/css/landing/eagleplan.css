@@ -1,0 +1,115 @@
+  h1 {
+    margin-bottom: 50px;
+
+    /* Add 30px space below the heading */
+}
+
+  #majorMinorSelectionForm label {
+      display: block; /* Ensure it's a block-level element to allow margin */
+      margin-bottom: 20px;
+      margin-top: 40px;
+    /* Space below the label */
+  }
+
+  body {
+    background-color: rgb(249, 237, 200); /* This sets the background color to the cream shade */
+}
+
+  .navbar {
+    background-color: #800000 !important;; /* Maroon color */
+  }
+
+  /* Google login button styling */
+  .btn-google {
+    background-color: #800000 !important;; /* Maroon color */
+    color: white; /* White text */
+    font-size: 1.2em; /* Makes text larger */
+    padding: .75em 1.5em;
+    display: block; /* Ensures the button is a block-level element */
+    width: 50%; /* Sets the width of the button to 50% of its container */
+    margin: 20px auto; /* Centers the button with a margin on top and bottom */
+  }
+
+  .btn-google:hover {
+    background-color: #600000; /* Darker maroon on hover */
+  }
+
+  /* Right-align navbar items */
+  .navbar-nav.ml-auto {
+    margin-left: auto!important;
+}
+
+  #recommendedCourses {
+    display: none; /* Initially hide the recommended courses section */
+  }
+
+  /* Ensures the progress bars use the maroon theme */
+  .progress-bar {
+    background-color: #800000;
+    transition: width 0.6s ease;
+  }
+
+  /* Additional custom styles */
+
+  /* Add space below the 'About EaglePlan' heading */
+.container h1 {
+    margin-bottom: 1rem; /* Adds space below the h1 tag */
+  }
+
+  /* Add space below the paragraph under 'About EaglePlan' */
+
+  /* Add space below the 'Your Progress' heading */
+  .container h2 {
+    margin-bottom: 1rem; /* Adds space below the h2 tag */
+  }
+
+  /* If you need to increase the space between the progress bars */
+  .container .progress + .progress {
+    margin-top: 0rem; /* Adds space between progress bars */
+  }
+
+  .container img {
+    display: block; /* Ensures the image is a block level element */
+    margin: 0 auto 1rem auto; /* Adds bottom margin */
+    max-width: 100%; /* Responsive image */
+  }
+
+  .login-logo {
+    margin: 40px auto; /* Adds 40px of space above and below the image */
+    max-width: 90%;
+    display: inline-block; /* This will keep the image inline and allow text-align to work */
+  }
+
+  .btn-google.btn-lg {
+    font-size: 1.25rem; /* Increases the font size */
+    padding: .75rem 1.5rem; /* Increases padding for a larger button */
+    margin-top: 20px; /* Adds space above the button */
+  }
+
+  .container {
+    text-align: center; /* This will center the text for all child elements */
+  }
+
+  .navbar-bc-logo {
+      height: 50px; /* or any other size */
+      /* ... other properties ... */
+  }
+
+
+  .form-group {
+      margin-bottom: 40px; /* Add 30px space below the dropdown */
+  }
+
+  /* This will add space above the button */
+  .btn-confirm {
+      margin-top: 20px; /* Add 30px space above the confirm button */
+      background-color: #800000;
+      color: white;
+  }
+
+  .profile-icon {
+  width: 10px; /* Adjust size as needed */
+  height: 10px;
+  border-radius: 50%; /* Makes the image round */
+  margin-right: 10px; /* Adds some space between the icon and the name */
+}

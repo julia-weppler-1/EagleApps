@@ -1,0 +1,14 @@
+{% include 'user/plan_view.html' %}
+<body>
+    <div class="left-sidebar-grid">
+        <div id="add-course-modal" class="modal">
+            <div class="modal-content">
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" style="color: black">Remove Course</button>
+                </form>
+                <a href="{% url 'user:plan' %}" class="cancel-button">Cancel</a>
+            </div>
+        </div>
+    </div>
+</body>

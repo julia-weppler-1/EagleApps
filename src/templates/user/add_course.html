@@ -1,0 +1,81 @@
+{% include 'user/plan_view.html' %}
+<body>
+    <div class="left-sidebar-grid">
+        <div id="add-course-modal" class="modal">
+            <div class="modal-content">
+                <!-- Removed the span with the close-button class -->
+                <div id="course-form-container">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div id="course-form-container">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form }}
+                            <button type="submit" style="color: black">Select</button>
+                        </form>
+                        </div>
+                        {% if repeat_warning %}
+                        <div id="course-form-container">
+                            This course is already in your plan!
+                        </div>
+                        {% endif %}
+                        {% if course_warning %}
+                        <div id="course-form-container">
+                            You can't add more than 5 courses to a single semester!
+                        </div>
+                        {% endif %}
+                        {% if prereq_warning %}
+                        <div id="course-form-container">
+                            WARNING: You do not have the pre-requisites for this course
+                            <div>To take this course you must have already taken:</div>
+                            {% for course_code in missing_prereqs %}
+                                <div>{{ course_code }}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <!--<input type="text" name="search" placeholder="Search courses..." class="search-input">
+                        <button type="submit" class="search-button" style="color: black">Search</button>-->
+                        
+                        <!--<div class="filter-section">
+                            <h3>Select Semester</h3>
+                            <div class="semester-selection-container">
+                                <select name="semester" class="semester-select">
+                                    <option value="FF">Freshman Fall</option>
+                                    <option value="FS">Freshman Spring</option>
+                                    <option value="SOF">Sophomore Fall</option>
+                                    <option value="SOS">Sophomore Spring</option>
+                                    <option value="JF">Junior Fall</option>
+                                    <option value="JS">Junior Spring</option>
+                                    <option value="SEF">Senior Fall</option>
+                                    <option value="SES">Senior Spring</option>
+                                </select>
+                            </div>
+                        </div>-->
+
+                        <div class="filter-section">
+                            <h3>Subject Area</h3>
+                            <div class="subject-area-container">
+                                <label><input type="checkbox" name="subject_area" value="CSCI"> CSCI - Computer Science</label><br>
+                                <label><input type="checkbox" name="subject_area" value="ECON"> ECON - Economics</label><br>
+                                <label><input type="checkbox" name="subject_area" value="CHEM"> CHEM - Chemistry</label><br>
+                                <label><input type="checkbox" name="subject_area" value="EESC"> EESC - Earth Science</label><br>
+                                <!-- More subject areas -->
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h3>Course Level</h3>
+                            <div class="course-level-container">
+                                <label><input type="checkbox" name="course_level" value="1000"> 1000+</label><br>
+                                <label><input type="checkbox" name="course_level" value="2000"> 2000+</label><br>
+                                <label><input type="checkbox" name="course_level" value="3000"> 3000+</label><br>
+                                <!-- More levels -->
+                            </div>
+                        </div>
+                    </form>
+                    <a href="{% url 'user:plan' %}" class="cancel-button">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

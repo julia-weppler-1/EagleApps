@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Major and Minor Selection</title>
+    <link rel="stylesheet" href="../../static/css/sep_page_addcourse/style.css" />
+  </head>
+<body>
+  <header>
+    <div class="left-aligned-items">
+          <img
+            src="https://cdn.glitch.global/f1f98189-106c-457f-ab2f-965094d0d0cc/eagleapps-logo-header.svg?v=1708357418144"
+            alt="bc-logo"
+            id="header-logo"
+          />
+          <h1>Student Major and Minor Selection</h1>
+        </div>
+  </header>
+  <main class="container">
+        <section class="sidebar left-sidebar">
+        <h2>Filter By School</h2>
+        <select id="school-filter">
+            <option value="all">All Schools</option>
+            <option value="MCAS">Morrissey College of Arts and Sciences (MCAS)</option>
+            <option value="CSOM">Carroll School of Management (CSOM)</option>
+            <option value="CSON">Connell School of Nursing (CSON)</option>
+            <option value="LSOE">Lynch School of Education and Human Development (LSOE)</option>
+        </select>
+    </section>
+    <section class="sidebar right-sidebar">
+        <h2>Search For Majors</h2>
+        <input type="text" id="major-search" placeholder="Search for a Major">
+    </section>
+  </main>
+  <main class="container">
+    <section class="sidebar left-sidebar">
+    <section id="major-selection">
+      <h2>Select Major</h2>
+      <form>
+        <label for="major1">Major:</label>
+        <select id="major1" name="major1">
+          <option value="">Select a major</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Biology">Biology</option>
+          <option value="Psychology">Psychology</option>
+          <!-- Add more majors here -->
+        </select>
+        <section class="additional-majors">
+          
+        <h2>Additional Major (Optional)</h2>
+        <div class="add-major-container">
+            <button id="add-major-btn">Add Another Major</button>
+        </div>
+    </section>
+      </form>
+    </section>
+    <section class="minor-selection">
+        <h2>Select Minors (Up to 2)</h2>
+      <div class="add-minor-container">
+        <button id="add-minor-btn">Add a Minor</button>
+      </div>
+    </section>
+    <button type="submit">Save</button>
+    </section>
+    <section class="sidebar right-sidebar">
+      <section class="major-info">
+        <h2>Computer Science Major Requirements</h2>
+        <ul>
+            <li style="background: rgb(138, 205, 116)">CSCI1101</li>
+            <li style="background: rgb(138, 205, 116)">CSCI1102</li>
+            <li style="background: #bebada">CSCI2243</li>
+            <li>CSCI2244</li>
+            <li>CSCI2271</li>
+            <li>CSCI2272</li>
+            <li>CSCI3383</li>
+        </ul>
+        <p>Completed</p>
+        <div class="progress-container">
+          <div class="skill completed">29%</div>
+        </div>
+        <p>In Progress</p>
+        <div class="progress-container">
+          <div class="skill in-progress">43%</div>
+        </div>
+    </section>
+    </section>
+  </main>
+</body>
+</html>

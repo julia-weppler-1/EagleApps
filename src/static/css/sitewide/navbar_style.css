@@ -1,0 +1,42 @@
+/* Common header style */
+header {
+    background-color: #800000; /* Maroon color */
+    color: white; /* White text */
+    padding: 10px 0; /* Vertical padding 10px and horizontal padding 0 */
+    text-align: center;
+}
+
+/* Navbar links */
+.navbar {
+    background-color: #800000; /* Maroon color */
+    color: white; /* This sets the text color for the navbar class, not the links */
+}
+
+.navbar a, .navbar-brand {
+    color: white; /* White text for links and brand */
+}
+
+.navbar a.active {
+    font-weight: bold; /* Makes the text bold */
+    color: #ffd700; /* Gold color to highlight the active page */
+}
+
+
+.navbar a {
+    color: white; /* White text for links */
+    margin-right: 15px; /* Right margin for spacing between links */
+    text-decoration: none; /* No underline */
+    font-size: 18px; /* Larger font size for links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+
+/* Brand/logo style */
+#header-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 15px; /* Adjusted right margin */
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- Inside templates/user/landing.html -->
+{% include 'user/navbar.html' %}
+<!-- The rest of your landing page content -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Four Year View</title>
+    <link rel="stylesheet" href="../../static/css/planview/style.css" />
+  </head>
+  <header>
+    <div class="right-aligned-items">
+      <h4>{{ user.first_name }} {{ user.last_name }}</h4>
+      <p>{{user.email}}</p>
+      <!-- You can add more elements here, like navigation links -->
+    </div>
+  </header>
+  <body>
+    <h2>This is where your four year plan will be!</h2>
+  </body>
+</html>

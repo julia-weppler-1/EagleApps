@@ -1,0 +1,436 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+h3 {
+  margin: 10px 0px;
+  font-size: 15px;
+}
+#header-logo {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+.left-aligned-items {
+  justify-content: right;
+}
+
+.right-aligned-items {
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  width: 40%; /* Adjust width as needed */
+  padding: 8px;
+  margin: 8px 0;
+  box-sizing: border-box; /* Includes padding and border in the element's width */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+header {
+  background-color: #800000; /* Maroon */
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#plan-view {
+  text-align: center;
+}
+
+button {
+  padding: 5px 5px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: white; 
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[name="clear_plan"] {
+  background-color: #f44336; /* A red color to signify a delete/clear action */
+}
+
+button[name="add_course"] {
+  background-color: white; 
+  border: 1px solid black; 
+  text-decoration: underline; 
+  color: white;
+}
+
+
+
+.plan-table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+/* grid container */
+.left-sidebar-grid {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "left-sidebar"
+    "main-content"
+    "footer";
+}
+
+/* assign columns to grid areas */
+.left-sidebar-grid > .header {
+  grid-area: header;
+  background-color: #800000; /* Red */
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+.left-sidebar-grid > .main-content {
+  grid-area: main-content;
+  margin-left: 10%;
+  margin-top: -100px;
+}
+.left-sidebar-grid > .left-sidebar {
+  margin-top: 1%;
+  margin-left: 15px;
+  grid-area: left-sidebar;
+}
+.left-sidebar-grid > .footer {
+  grid-area: footer;
+  background: #72c2f1;
+}
+
+.plan-table th,
+.plan-table td {
+  border: 1px solid #ddd;
+  padding: 12px 8px;
+  text-align: center;
+  border: none; /* Remove vertical borders */
+  border-bottom: 1px solid #ddd; /* Add horizontal border */
+}
+
+.plan-table td:first-child {
+  width: 20%;
+  text-align: left;
+}
+.plan-table td:nth-child() {
+  border-right: 1px solid #ddd; /* Add vertical border between Spring and Fall */
+  width: 50%;
+}
+.plan-table th:nth-child() {
+  width: 50%;
+}
+.course-cell {
+  position: relative;
+  height: 150px; /* Adjust the height as needed to accommodate three cards */
+}
+#semester {
+  font-size: 13px; /* Match font size */
+  padding: 10px; /* Match padding */
+  margin: 10px 0px; /* Match margin */
+  border: 1px solid #cccccc; /* Match border */
+  border-radius: 5px;
+  width: auto;
+}
+.add-courses-card {
+  top: 10px; /* Adjust as needed for spacing */
+  left: 30%;
+  width: 100px; /* Set a fixed width for the card */
+  height: 40px; /* Set a fixed height for the card */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Add rounded corners */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 5px;
+  font-size: 13px;
+}
+
+.status-menu {
+  display: none; /* Hide the menu by default */
+  position: absolute;
+  top: 100%; /* Position below the card */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  z-index: 1; /* Ensure the menu is above other elements */
+}
+
+.status-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% - 100px); /* Adjust the distance from the card */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  z-index: 1;
+}
+
+.add-courses-card:hover .status-menu {
+  display: block;
+}
+
+.status-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.status-menu ul li {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.status-menu ul li:hover {
+  background-color: #f9f9f9;
+}
+.course-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+p {
+  font-size: 13px;
+}
+
+.progress-container {
+  background-color: rgb(192, 192, 192);
+  width: 8%;
+  height: 5%;
+  border-radius: 15px;
+  align-items: flex-start;
+}
+
+.skill {
+  color: white;
+  padding: 1%;
+
+  font-size: 15px;
+  border-radius: 15px;
+}
+
+.html {
+  width: 0%;
+}
+
+.php {
+  width: 0%;
+}
+#clear-plan-container {
+  margin-top: 0%; /* Adjust margin as needed */
+  margin-left: 5px;
+}
+#clear-plan {
+  font-size: 13px; /* Match font size */
+  color: red;
+  padding: 10px; /* Match padding */
+  margin: 10px 0px; /* Match margin */
+  border: 1px solid #cccccc; /* Match border */
+  border-radius: 5px;
+  width: auto;
+  background-color: #fff;
+}
+
+#clear-plan:hover {
+  background-color: #f9f9f9;
+}
+
+.my-legend .legend-title {
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 90%;
+}
+.my-legend .legend-scale ul {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  float: left;
+  list-style: none;
+}
+.my-legend .legend-scale ul li {
+  font-size: 80%;
+  list-style: none;
+  margin-left: 0;
+  line-height: 18px;
+  margin-bottom: 2px;
+}
+.my-legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 16px;
+  width: 30px;
+  margin-right: 5px;
+  margin-left: 0;
+  border: 1px solid #999;
+}
+
+.my-legend a {
+  color: #777;
+}
+
+.legend-container {
+  margin-top: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.dots-container {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 4px; /* Adjust spacing between dots */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-size: 12px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 4px 5px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.search-container {
+  text-align: center; /* Center the search bar container's content */
+}
+
+.search-container input[type="text"] {
+  width: 60%; /* Increase the width of the search bar */
+  padding: 10px; /* Increase padding for a bigger field */
+  font-size: 16px; /* Increase font size for better readability */
+  margin: 20px 0; /* Add some space above and below the search bar */
+  display: inline-block; /* Ensure the search bar is in line */
+  border: 2px solid #cccccc; /* Optional: Style the border */
+  border-radius: 4px; /* Optional: Round the corners */
+}
+
+.search-container button {
+  padding: 10px 20px; /* Adjust button padding */
+  font-size: 16px; /* Match font size with the input field */
+  border-radius: 4px; /* Optional: Round the corners */
+  cursor: pointer; /* Change mouse cursor on hover */
+}
+
+.close-button {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.courses-container {
+  display: flex; /* This turns on flexbox for the container */
+  flex-wrap: wrap; /* This allows items to wrap to the next line if there's not enough space */
+  gap: 10px; /* This adds some space between the items */
+}
+
+
+/* Progress bar container */
+.progress-container {
+  width: 100%; /* Full width */
+  background-color: #ddd; /* Light grey background */
+  border-radius: 15px; /* Rounded corners */
+  margin-bottom: 10px; /* Space below the progress bar */
+}
+
+/* Progress bar */
+.progress-bar {
+  background-color: #800000 !important; /* Maroon color */
+  height: 30px; /* Set a fixed height */
+  border-radius: 15px; /* Rounded corners */
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center; /* Center the text horizontally */
+  color: white; /* White text */
+  transition: width 0.6s ease; /* Smooth transition for width change */
+  font-size: 16px; /* Larger font size */
+  width: 0%; /* Default width to 0 */
+}
+
+/* Text inside the progress bar */
+.progress-bar > .skill {
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  background: none; /* No background color */
+  font-size: inherit; /* Use the font size of the parent */
+  color: inherit; /* Use the text color of the parent */
+}
+
+/* Ensure that the .php class also uses maroon color when you add the logic */
+.php {
+  background-color: #800000; /* Maroon color */
+}

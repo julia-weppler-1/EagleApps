@@ -1,0 +1,107 @@
+
+{% include 'user/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department View</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card-container {
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+    </style>
+</head>
+<body>
+    <h3>Search Course by Department</h3>
+    <form method="post">
+      {% csrf_token %}
+        <select name="department">
+            <option value="CSCI">Computer Science</option>
+            <option value="ECON">Economics</option>
+            <option value="MATH">Math</option>
+            <option value="THEO">Theology</option>
+            <option value="ENVS">Environmental Studies</option>
+            <option value="CHEM">Chemistry</option>
+            <option value="BIOL">Biology</option>
+            <option value="PHYS">Physics</option>
+            <option value="THEO">Theology</option>
+            <option value="AADS">African Diaspora Studies</option>
+            <option value="ARTS">Studio Art</option>
+            <option value="ENGL">English</option>
+            <option value="HIST">History</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+    {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-warning" role="alert">
+                  {{ message }}
+              </div>
+          {% endfor %}
+          {% endif %}
+    {% if data %}
+    <h4>Search Results for {{ department }}</h4>
+    <div class="card-container">
+        {% for item in data %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.course.name }} </h5>
+                    <p class="card-text">{{ item.course.descr.plain }}</p>
+                    {% if item.course.creditOptionIds %}
+                    <p class="card-text">Number of Credits: {{ item.credits }}</p>
+                    {% else %}
+                    <p class="card-text">Number of Credits: N/A</p>
+                    {% endif %}
+                    {% if item.prereqs %}
+                      <p class="card-text" style="color: red">You will not be able to add to plan unless you also have the following: {{ item.prereqs|join:", " }}</p>
+                    {% else %}
+                        <p class="card-text" style="color: red">Prerequisites: None</p>
+                    {% endif %}    
+                    {% if repeat_warning %}
+                      <p class="card-text" style="color: red">Warning: this course is already in your plan</p>
+                    {% endif %}
+                   <form method="post">
+                      {% csrf_token %}
+                      
+                      <select name="semester">
+                          <option value="freshman_fall">Freshman Fall</option>
+                          <option value="freshman_spring">Freshman Spring</option>
+                          <option value="sophomore_fall">Sophomore Fall</option>
+                          <option value="sophomore_spring">Sophomore Spring</option>
+                          <option value="junior_fall">Junior Fall</option>
+                          <option value="junior_spring">Junior Spring</option>
+                          <option value="senior_fall">Senior Fall</option>
+                          <option value="senior_spring">Senior Spring</option>
+                      </select>
+                      <input type="hidden" name="new_course_code" value="{{ item.course.courseCode }}">
+                      <input type="hidden" name="new_course_credits" value="{{ item.credits }}">
+                      <button type="submit" style="color: black">Add Course to Plan</button>
+                    </form>
+                    {% if repeat_warning %}
+                    <div id="course-form-container">
+                        This course is already in your plan!
+                    </div>
+                    {% endif %}
+                    {% if course_warning %}
+                    <div id="course-form-container">
+                        You can't add more than 5 courses to a single semester!
+                    </div>
+                    {% endif %}
+                    {% if prereq_warning %}
+                    <div id="course-form-container">
+                        WARNING: You do not have the pre-requisites for this course
+                        <div>To take this course you must have already taken:</div>
+                        {% for course_code in missing_prereqs %}
+                            <div>{{ course_code }}</div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                  </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>

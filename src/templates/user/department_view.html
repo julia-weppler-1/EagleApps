@@ -1,0 +1,64 @@
+{% include 'user/navbar_admin.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Department View</title>
+    <link rel="stylesheet" href="../../static/css/department_view/style.css" />
+  </head>
+  <body>
+    <form method="get">
+      <section id="filters">
+          <label for="department-input">Department:</label>
+          <select id="department-input" name="department">
+              <option value="" disabled selected>Select Department</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Math">Math</option>
+              <option value="Economics">Economics</option>
+              <!-- Add more departments as needed -->
+          </select>
+
+          <label for="semester">Select Term:</label>
+          <select id="semester" name="semester">
+              <option value="" disabled selected>Select Term</option>
+              <option value="fall2024">Fall 2024</option>
+              <option value="spring2025">Spring 2025</option>
+              <option value="fall2025">Fall 2025</option>
+              <option value="spring2026">Spring 2026</option>
+              <!-- Add more semesters as needed -->
+          </select>
+
+          <button type="submit" id="apply-search-btn">Apply Search</button>
+      </section>
+    </form>
+
+    <section id="course-data">
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Semester</th>
+                    <th>Enrollment Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course_code, semesters in enrollment_data.items %}
+                    {% for semester, count in semesters.items %}
+                        <tr>
+                            <td>{{ course_code }}</td>
+                            <td>{{ semester }}</td>
+                            <td>{{ count }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr><td colspan="3">No semesters data for {{ course_code }}</td></tr>
+                    {% endfor %}
+                {% empty %}
+                    <tr><td colspan="3">No enrollment data available.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+  </body>
+</html>

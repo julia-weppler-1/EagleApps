@@ -1,0 +1,186 @@
+{% include 'css/planview/style.css' %}
+
+/* Modal Overlay Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Dimmed background */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* Adjusted for better centering */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* More appropriate for a search modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    position: relative; /* For positioning close button */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Search Bar Styles */
+.search-input {
+    padding: 8px 10px;
+    margin-top: 20px; /* Space above search bar */
+    margin-bottom: 10px; /* Space below search bar */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 20px); /* Adjusting width to padding and border */
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* A green color for visibility, align with your theme */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Full width for consistency */
+    margin-top: 10px;
+}
+
+.search-button:hover {
+    background-color: #45a049; /* Slightly darker shade on hover */
+}
+
+/* Filter Section Styles */
+.filter-section {
+    margin-top: 20px;
+}
+
+.filter-input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.checkbox-group {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.checkbox-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px; /* Adjust font size as needed */
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Cancel Button Styles */
+.cancel-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f44336; /* A red color for cancel buttons */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px; /* Space between filter section and cancel button */
+    width: 100%; /* Full width for consistency */
+}
+
+.cancel-button:hover {
+    background-color: #d73829; /* Slightly darker shade on hover */
+}
+
+/.subject-area-container {
+    height: 150px; /* Fixed height to enable scrolling */
+    overflow-y: auto; /* Enables vertical scroll */
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff; /* Add a background color if needed */
+}
+
+.subject-area-container label {
+    display: block;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+/* Style the course level container similarly if you wish */
+.course-level-container {
+    margin-bottom: 20px;
+}
+
+.course-level-container label {
+    display: block;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+/* Ensure inputs and buttons are consistent in appearance */
+.filter-input,
+.search-input,
+.search-button,
+.cancel-button {
+    width: 100%; /* Full-width inputs and buttons for consistency */
+    padding: 10px;
+    margin: 5px 0; /* Spacing for aesthetics */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Restyle the search button for a more prominent look */
+.search-button {
+    background-color: #4CAF50; /* A green color for visibility, align with your theme */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #45a049; /* Slightly darker shade on hover */
+}
+
+/* Restyle the cancel button for a clear 'exit' indication */
+.cancel-button {
+    background-color: #f44336; /* A red color for cancel buttons */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.cancel-button:hover {
+    background-color: #d73829; /* Slightly darker shade on hover */
+}
+
+.semester-select {
+    width: 100%; /* Full width to match other inputs */
+    padding: 10px; /* Comfortable padding */
+    border: 1px solid #ccc; /* Consistent border styling */
+    border-radius: 4px; /* Rounded corners like other inputs */
+    background-color: #fff; /* Matching background */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.semester-select:hover {
+    border-color: #888; /* Slightly darker border on hover for visibility */
+}

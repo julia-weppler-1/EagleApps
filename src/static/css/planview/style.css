@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  /* Common header style */
+header {
+    background-color: #800000; /* Maroon color */
+    color: white; /* White text */
+    padding: 10px 0; /* Vertical padding 10px and horizontal padding 0 */
+    text-align: center;
+}
+
+/* Navbar links */
+.navbar {
+    background-color: #800000; /* Maroon background for navbar */
+    color: white;
+    padding: 10px 0; /* Padding to ensure proper height */
+}
+
+.navbar a {
+    color: white; /* White text for links */
+    margin-right: 15px; /* Right margin for spacing between links */
+    text-decoration: none; /* No underline */
+    font-size: 18px; /* Larger font size for links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+
+/* Brand/logo style */
+#header-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 15px; /* Adjusted right margin */
+}
+

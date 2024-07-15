@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #800000; /* Maroon */
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .major-info ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0;
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+  }
+  
+  .major-info li {
+    position: relative;
+    top: 10px;
+    left: 0%;
+    width: 100px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    font-size: 13px;
+  }
+  
+  select {
+      width: 50%;
+      padding: 5px;
+      margin-top: 10px;
+      font-size: 12px;
+  }
+  .left-sidebar select {
+    width: 50%; /* Increase this value as needed */
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  input[type="text"] {
+      width: 50%;
+      padding: 5px;
+      margin-top: 10px;
+      font-size: 12px;
+  }
+  
+  h2 {
+      font-family: "Lyon Text", Georgia, serif;
+      font-size: 16px;
+      font-weight: bold;
+  }
+  
+  .progress-container {
+    background-color: rgb(192, 192, 192);
+    width: 10%;
+    border-radius: 15px;
+  }
+  
+  .skill {
+    background-color: rgb(116, 194, 92);
+    color: white;
+    padding: 1%;
+    text-align: right;
+    font-size: 15px;
+    border-radius: 15px;
+  }
+  .completed {
+    width: 29%;
+  }
+  .in-progress {
+    background-color: #bebada;
+    width: 43%;
+  }
+  
+  .container {
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .left-sidebar {
+      flex: 1;
+      padding: 10px;
+      background-color: #f0f0f0; /* Light gray background */
+      border-right: 1px solid #ccc; /* Gray border */
+  }
+  
+  .right-sidebar {
+      flex: 1;
+      padding: 10px;
+  }
+  
+  #header-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+  }
+  .left-aligned-items,
+  .right-aligned-items {
+    display: flex;
+    align-items: center;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  section {
+    margin-bottom: 2px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+    font-family: "Lyon Text", Georgia, serif;
+  }
+  
+  select,
+  button {
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #87CEEB;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #6495ED;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Major Courses</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+        background-color: #f7f7f7;
+        color: #333;
+      }
+      .container {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .major-header {
+        margin-bottom: 30px;
+      }
+      .major-header h2 {
+        color: #0056b3;
+        margin-bottom: 10px;
+      }
+      .checkbox-group label {
+        margin-bottom: 12px;
+        display: block;
+        padding: 8px;
+        background: #e9ecef;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: background-color 0.15s;
+      }
+      .checkbox-group label:hover {
+        background: #dee2e6;
+      }
+      .checkbox-group input[type="checkbox"] {
+        margin-right: 10px;
+      }
+      #completed-courses {
+        margin-top: 30px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="major-header text-center">
+        <h2>Your Major: CS</h2>
+      </div>
+      <h1 class="text-center mb-4">Major Courses</h1>
+      <form id="courses-form" class="checkbox-group">
+        <!-- Dynamically create checkboxes for each course -->
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="course" value="Computer Science 1"> Computer Science 1</label><br>
+          <label><input type="checkbox" name="course" value="Computer Science 2"> Computer Science 2</label><br>
+          <label><input type="checkbox" name="course" value="Computer Systems"> Computer Systems</label><br>
+          <label><input type="checkbox" name="course" value="Computer Organization"> Computer Organization</label><br>
+          <label><input type="checkbox" name="course" value="Logic and Computation"> Logic and Computation</label><br>
+          <label><input type="checkbox" name="course" value="Randomness and Computation"> Randomness and Computation</label><br>
+          <label><input type="checkbox" name="course" value="Algorithms"> Algorithms</label><br>
+          <label><input type="checkbox" name="course" value="CSCI 2000"> CSCI 2000+ </label><br>
+          <label><input type="checkbox" name="course" value="CSCI 3000"> CSCI 3000+ #1 </label><br>
+          <label><input type="checkbox" name="course" value="CSCI 3000"> CSCI 3000+ #2 </label><br>
+          <label><input type="checkbox" name="course" value="CSCI 3000"> CSCI 3000+ #3 </label><br>
+        </div>
+      </form>
+      <div id="completed-courses" class="text-center">
+        Completed Courses: <span id="completed-count">0</span>/11
+      </div>
+    </div>
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      // Function to update the count of completed courses and save the state
+      function updateCompletedCount() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        var completedCount = 0;
+        var coursesState = {};
+
+        checkboxes.forEach(function(checkbox) {
+          coursesState[checkbox.value] = checkbox.checked;
+          if (checkbox.checked) completedCount++;
+        });
+
+        localStorage.setItem('coursesState', JSON.stringify(coursesState));
+        document.getElementById('completed-count').textContent = completedCount;
+      }
+      // Function to load and apply the saved state
+      function loadSavedState() {
+        var savedState = localStorage.getItem('coursesState');
+        var coursesState = savedState ? JSON.parse(savedState) : {};
+
+        document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+          var checked = coursesState[checkbox.value];
+          checkbox.checked = checked || false;
+          checkbox.addEventListener('change', updateCompletedCount);
+        });
+
+        updateCompletedCount(); // Update count on page load based on saved state
+      }
+      // Call loadSavedState on page load
+      window.onload = loadSavedState;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Header Styles */
+header {
+  background-color: #800000; /* Maroon */
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#header-logo {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.left-aligned-items,
+.right-aligned-items {
+  display: flex;
+  align-items: center;
+}
+
+.right-aligned-items {
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+/* Form Elements & Buttons */
+select,
+#department-input,
+#department,
+#semester {
+  font-size: 14px;
+  padding: 10px;
+  margin: 10px 5px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+select:hover,
+select:focus {
+  border-color: #999999;
+  outline: none;
+}
+
+#department-input,
+#department {
+  width: 30%;
+}
+
+#semester {
+  width: auto;
+}
+#search,
+#apply-search-btn {
+  padding: 8px 16px;
+  background-color: #e8e8e8; /* Grey for #search, overridden for #apply-search-btn */
+  color: black; /* White for #apply-search-btn, overridden */
+  border: 1px solid #545b62;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#search:hover {
+  background-color: #5a6268;
+  border-color: #4e555b;
+}
+
+#apply-search-btn {
+  background-color: #2a2ab8; /* Blue */
+  color: white;
+  margin-left: 10px;
+}
+
+#apply-search-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #dddddd;
+}
+
+th {
+  background-color: #800000; /* Maroon */
+  color: white;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  th,
+  td {
+    text-align: right;
+    padding: 10px 5px;
+  }
+
+  select {
+    width: auto;
+  }
+}
