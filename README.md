@@ -13,7 +13,7 @@ Next, if they are a new user, they will be prompted to fill out the following in
 
 <img width="1440" alt="EagleApps Major Select" src="https://github.com/user-attachments/assets/0e97bf51-1dc1-42ef-8492-d69f3bf59104">
 
-If they are a returninjg user, they will instead be brought to the landing page. If they already have courses in their plan, they will see their credit progress.
+If they are a returning user, they will instead be brought to the landing page. If they already have courses in their plan, they will see their credit progress.
 
 <img width="1440" alt="EagleApps Progress" src="https://github.com/user-attachments/assets/fa0c9bc8-5e20-4f9b-a3f9-39eea7fbba46">
 
