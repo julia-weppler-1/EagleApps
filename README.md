@@ -1,7 +1,7 @@
 # We-Byte
 
 ## Description
-Below is a walkthrough of the application, since it is not accessible to non-bc users or anyone without access to the Boston College Course Info API. 
+Below is a walkthrough of the application, since it is not accessible to non-bc users or anyone without access to the Boston College Course Info API. The main focus of the design choices was to make the application fit seamlessly into existing Boston College application platforms. 
 
 First, users will be prompted to login using Google SSO with their Boston College Credentials.
 
