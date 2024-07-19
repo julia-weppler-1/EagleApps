@@ -17,7 +17,7 @@ If they are a returning user, they will instead be brought to the landing page. 
 
 <img width="1440" alt="EagleApps Progress" src="https://github.com/user-attachments/assets/fa0c9bc8-5e20-4f9b-a3f9-39eea7fbba46">
 
-If they click on "Build Plan" on the menu above, they will be brought to the view of their plan. Students can have up to 3 plans to alternate between, and will receive suggestions for courses not yet taken based on their major. Additionally, they can add credits from AP classes, to account for requirements that can be fulfilled prior to starting college. The menu has been cut off from the screenshot to show the entire plan view.
+If they click on "Build Plan" on the menu above, they will be brought to the view of their plan. Students can have up to 3 plans to alternate between, and will receive suggestions for courses not yet taken based on their major. Additionally, they can add credits from AP classes, to account for requirements that can be fulfilled prior to starting college. Students currently must manually set classes as "Planned", "In Progress", or "Completed". The menu has been cut off from the screenshot to show the entire plan view.
 
 <img width="1440" alt="EagleApps Plan View Student" src="https://github.com/user-attachments/assets/b03a60ff-9288-44b3-9fe3-1f7e482ca3d4">
 
