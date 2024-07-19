@@ -13,13 +13,13 @@ Next, if they are a new user, they will be prompted to fill out the following in
 
 <img width="1440" alt="EagleApps Major Select" src="https://github.com/user-attachments/assets/0e97bf51-1dc1-42ef-8492-d69f3bf59104">
 
-If they are a returning user, they will instead be brought to the landing page. If they already have courses in their plan, they will see their credit progress.
+If they are a returning user, they will instead be brought to the landing page. If they already have courses in their plan, they will see their credit progress. The progress bar is based on courses actually taken.
 
 <img width="1440" alt="EagleApps Progress" src="https://github.com/user-attachments/assets/fa0c9bc8-5e20-4f9b-a3f9-39eea7fbba46">
 
 If they click on "Build Plan" on the menu above, they will be brought to the view of their plan. Students can have up to 3 plans to alternate between, and will receive suggestions for courses not yet taken based on their major. Additionally, they can add credits from AP classes, to account for requirements that can be fulfilled prior to starting college. The menu has been cut off from the screenshot to show the entire plan view.
 
-<img width="1435" alt="Screenshot 2024-07-19 at 11 42 17 AM" src="https://github.com/user-attachments/assets/4e5ea1af-7d63-439d-9191-1408b12d34cc">
+<img width="1440" alt="EagleApps Plan View Student" src="https://github.com/user-attachments/assets/b03a60ff-9288-44b3-9fe3-1f7e482ca3d4">
 
 Next, if the user navigates to "Search Courses", they will be able to find courses by department. In future work on this progress, it would be helpful to implement a fully-functional free-text search, though that was out of the scope of this project.
 
